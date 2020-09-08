@@ -82,7 +82,7 @@ extern int aciWorldIndex;
 
 extern int Pause;
 
-extern char* aciSTR_OFF;
+extern const char* aciSTR_OFF;
 extern char* aciSTR_DAY;
 extern char* aciSTR_UNDEFINED_PRICE;
 extern char* aciSTR_PRICE;
@@ -107,10 +107,10 @@ extern char* aciSTR_BURST;
 extern char* aciSTR_WORKING_TIME;
 extern char* aciSTR_SECONDS;
 extern char* aciSTR_IN_PACK;
-extern char* aciSTR_NO_CASH;
-extern char* aciSTR_PICKUP_ITEMS_OFF;
-extern char* aciSTR_PICKUP_WEAPONS_OFF;
-extern char* aciSTR_PutThis;
+extern const char* aciSTR_NO_CASH;
+extern const char* aciSTR_PICKUP_ITEMS_OFF;
+extern const char* aciSTR_PICKUP_WEAPONS_OFF;
+extern const char* aciSTR_PutThis;
 
 extern int aciItmTextQueueSize;
 
@@ -7245,7 +7245,7 @@ void actIntDispatcher::inv_mouse_move_quant(void)
 			bt_pr1 = XGR_MouseObj.promptData -> getData(ACI_PICKUP_WPN_OFF);
 			if(!bt_pr1){
 				bt_pr1 = new XGR_MousePromptData;
-				bt_pr1 -> set_text(aciSTR_PICKUP_WEAPONS_OFF);
+				bt_pr1 -> set_text(const_cast<char *>(aciSTR_PICKUP_WEAPONS_OFF));
 				bt_pr1 -> ID = ACI_PICKUP_WPN_OFF;
 				XGR_MouseObj.promptData -> AddElement((XListElement*)bt_pr1);
 			}
@@ -7276,7 +7276,7 @@ void actIntDispatcher::inv_mouse_move_quant(void)
 			bt_pr1 = XGR_MouseObj.promptData -> getData(ACI_PICKUP_ITM_OFF);
 			if(!bt_pr1){
 				bt_pr1 = new XGR_MousePromptData;
-				bt_pr1 -> set_text(aciSTR_PICKUP_ITEMS_OFF);
+				bt_pr1 -> set_text(const_cast<char *>(aciSTR_PICKUP_ITEMS_OFF));
 				bt_pr1 -> ID = ACI_PICKUP_ITM_OFF;
 				XGR_MouseObj.promptData -> AddElement((XListElement*)bt_pr1);
 			}
@@ -7462,7 +7462,7 @@ void actIntDispatcher::inv_mouse_imove_quant(void)
 				avi_pr2 = new XGR_MousePromptData;
 				avi_pr2 -> ID = ACI_AVI_PROMPT2;
 				XGR_MouseObj.promptData -> AddElement((XListElement*)avi_pr2);
-				avi_pr2 -> set_text(aciSTR_PutThis);
+				avi_pr2 -> set_text(const_cast<char *>(aciSTR_PutThis));
 			}
 			obj = (iScreenObject*)curLocData -> objList[ACI_AVI_OBJ_ID];
 			if(flags & AS_INV_MOVE_ITEM){
@@ -7493,7 +7493,7 @@ void actIntDispatcher::inv_mouse_imove_quant(void)
 		pr0 = new XGR_MousePromptData;
 		pr0 -> ID = ACI_NO_CASH_PROMPT2;
 		XGR_MouseObj.promptData -> AddElement((XListElement*)pr0);
-		pr0 -> set_text(aciSTR_NO_CASH);
+		pr0 -> set_text(const_cast<char *>(aciSTR_NO_CASH));
 	}
 
 	if(secondMatrix){
@@ -7549,7 +7549,7 @@ void actIntDispatcher::inv_mouse_imove_quant(void)
 				pr = new XGR_MousePromptData;
 				pr -> ID = ACI_NO_CASH_PROMPT;
 				XGR_MouseObj.promptData -> AddElement((XListElement*)pr);
-				pr -> set_text(aciSTR_NO_CASH);
+				pr -> set_text(const_cast<char *>(aciSTR_NO_CASH));
 			}
 			pr -> StartX = curMatrix -> ScreenX + iScreenOffs;
 			pr -> StartY = curMatrix -> ScreenY;

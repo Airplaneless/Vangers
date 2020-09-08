@@ -28,7 +28,7 @@ extern int __internal_argc;
 extern char **__internal_argv;
 
 int xtInitApplication(void) {
-#ifdef _WIN32
+#if defined(_WIN32) || defined(_WIN64)
 	SetConsoleTitle("Vangers Server ");
 #else
 	std::cout << "\033]0;"

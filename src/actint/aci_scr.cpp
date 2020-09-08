@@ -26,8 +26,8 @@ extern int iMouseY;
 
 extern int NetworkON;
 
-extern char* aciSTR_ON;
-extern char* aciSTR_OFF;
+extern const char* aciSTR_ON;
+extern const char* aciSTR_OFF;
 
 extern iScreenOption** iScrOpt;
 

@@ -3,7 +3,7 @@
 #define __XGLOBAL_H
 
 
-#ifdef _WIN32
+#if defined(_WIN32) || defined(_WIN64)
 #include <windows.h>
 #include <process.h>
 #endif

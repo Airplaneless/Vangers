@@ -61,8 +61,8 @@ INCLUDE_DIRECTORIES(SYSTEM
 	${STEAM_INCLUDE_DIR}
 )
 
-SET(CMAKE_CXX_FLAGS_DEBUG "-g -Wall -Wextra")
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-invalid-source-encoding -O2 -msse2 -ftree-vectorize -ffast-math")
+SET(CMAKE_CXX_FLAGS_DEBUG "-g -Wall")
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2 -msse2 -ftree-vectorize -ffast-math")
 # For modern gcc
 add_definitions(-D_USE_MATH_DEFINES)
 

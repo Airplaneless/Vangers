@@ -866,6 +866,9 @@ void World::process_set_position(Player *player) {
 }
 
 int World::check_visibility(Player *p1, Player *p2) {
+#if defined(_WIN32) || defined(_WIN64)
+#undef max
+#endif
 	if (abs(getDistY(p1->y, p2->y)) <
 		std::max(p1->y_half_size_of_screen, p2->y_half_size_of_screen) + PLAYERS_RADIUS)
 		return 1;

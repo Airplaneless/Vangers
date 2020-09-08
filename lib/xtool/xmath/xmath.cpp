@@ -14,7 +14,7 @@
 #include "xglobal.h"
 #include "xmath.h"
 
-#ifdef _WIN32
+#if defined(_WIN32) || defined(_WIN64)
 #pragma warning(disable : 4073 )
 #pragma init_seg(lib)
 #endif

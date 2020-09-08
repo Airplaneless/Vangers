@@ -111,7 +111,7 @@ int main(int argc, char *argv[])
 	__internal_argc = argc;
 	__internal_argv = argv;
 
-	#ifdef _WIN32
+	#if defined(_WIN32) || defined(_WIN64)
 		std::cout<<"Load backtrace"<<std::endl;
 		LoadLibraryA("backtrace.dll");
 		std::cout<<"Set priority class"<<std::endl;

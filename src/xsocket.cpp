@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#ifdef _WINDOWS_
+#if defined(_WIN32) || defined(_WIN64)
 #	define WIN32_EXTRA_LEAN
 #	define WIN32_LEAN_AND_MEAN
 #	include <windows.h>

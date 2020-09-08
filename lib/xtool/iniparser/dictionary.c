@@ -24,7 +24,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h>
+#if defined(_WIN32) || defined(_WIN64)
+#    include <io.h>
+#    define strncasecmp _strnicmp
+#    define strcasecmp _stricmp
+#else
+#    include <unistd.h>
+#endif
+
 
 /** Maximum value size for integers and doubles. */
 #define MAXVALSZ	1024

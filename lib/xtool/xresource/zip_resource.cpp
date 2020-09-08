@@ -229,7 +229,7 @@ XZIP_FileHeader* XZIP_Resource::find(char* fname)
 	XZIP_FileHeader* p = fileList.first();
 
 	while(p){
-#ifdef _WIN32
+#if defined(_WIN32) || defined(_WIN64)
 		if(!_stricmp(p -> name(),fname))
 #else
 		if(!strcasecmp(p -> name(),fname))
